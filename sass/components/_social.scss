@@ -1,0 +1,30 @@
+.social-icon-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.out-team-icon-link {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--main-transition);
+
+  &:is(:hover, :focus) .social-icon {
+    fill: var(--white-title-color);
+  }
+
+  &:is(:hover, :focus) {
+    fill: var(--white-title-color);
+    background-color: #2196f3;
+  }
+}
+
+.social-icon {
+  fill: var(--icon-color);
+  transition: fill var(--main-transition);
+}

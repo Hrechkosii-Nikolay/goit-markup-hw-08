@@ -1,0 +1,35 @@
+.burger-open-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  @include mq(tab) {
+    display: none;
+  }
+}
+
+.burger-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  &:is(:hover, :focus) .burger-close-btn__icon {
+    fill: var(--accent-site-color);
+  }
+}

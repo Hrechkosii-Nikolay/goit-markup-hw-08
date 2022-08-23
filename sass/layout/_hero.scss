@@ -1,0 +1,57 @@
+.hero {
+  padding: 200px 0;
+  text-align: center;
+
+  min-height: 600px;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  background-color: var(--darck-background-color);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero@1x_mob.jpg);
+
+  @include mq(mob-onlys) {
+    @include mq(retina) {
+      background-image: url(../images/hero@2x_mob.jpg);
+    }
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__title {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    width: 693px;
+
+    color: var(--white-title-color);
+
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(not-desk) {
+      font-size: 26px;
+      line-height: 1.62;
+      max-width: 360px;
+    }
+  }
+
+  &__btn {
+    width: 216px;
+
+    @include mq(mob-only) {
+      width: 200px;
+    }
+
+    transition: transform var(--main-transition);
+    transition: box-shadow var(--main-transition);
+  }
+
+  &__btn:is(:hover, :focus) {
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.3);
+  }
+}

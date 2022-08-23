@@ -1,0 +1,155 @@
+/* ------------------------------------------ */
+/* -----------Portfolio-HTML---------------- */
+/* ---------------------------------------- */
+
+/**
+  |==================================
+  | Button
+  |==================================
+*/
+
+.portfolio {
+  @include section;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 8px;
+
+  @include mq(mob-only) {
+    max-width: 400px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+.filter-bnt {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  background-color: var(--primery-background-color);
+  cursor: pointer;
+
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 22px;
+
+  transition: background-color var(--main-transition), color var(--main-transition),
+    box-shadow var(--main-transition);
+
+  &:is(:hover, :focus),
+  &.current-filter {
+    color: var(--white-btn-text-color);
+    background-color: var(--accent-site-color);
+
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/**
+    |==================================
+    | Portfolio-list
+    |==================================
+  */
+
+.portfolio-list .portfolio-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.portfolio-item .portfolio-text {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.portfolio-title {
+  margin-bottom: 4px;
+}
+
+.portfolio-text-wrap {
+  padding: 20px 24px;
+
+  border: 1px solid #e5e5e5;
+  border-top: none;
+
+  @include mq(tab) {
+    flex-grow: 1;
+  }
+}
+
+.portfolio-item {
+  @include mq(desk-only) {
+    width: 370px;
+  }
+  @include mq(mob-only) {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mq(tab-only) {
+    max-width: 354px;
+  }
+}
+
+.portfolio-item-link {
+  display: block;
+
+  @include mq(tab) {
+    max-width: 354px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  transition: box-shadow var(--main-transition);
+}
+.portfolio-item-link:is(:hover, :focus) {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* ---- portfolio item overlay ----*/
+.portfolio-item-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item-overlay-text {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--white-title-color);
+
+  padding: 63px 24px;
+}
+
+.portfolio-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-portfolio-color);
+
+  transform: translateY(101%);
+  transition: transform var(--main-transition);
+
+  .portfolio-item-link:is(:hover, :focus) & {
+    transform: translateY(0);
+  }
+}

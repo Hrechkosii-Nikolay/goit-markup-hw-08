@@ -1,0 +1,47 @@
+.our-work {
+  @include section;
+
+  display: none;
+
+  @include mq(desk) {
+    display: block;
+    padding-top: 0;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__transparent-strip {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white-title-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
